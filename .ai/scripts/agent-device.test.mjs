@@ -20,7 +20,7 @@ function fixture(t) {
   put("examples/flutter_counter/android/build.gradle.kts", "android build");
   put("examples/flutter_counter/pubspec.yaml", "name: test");
   put("examples/flutter_counter/pubspec.lock", "packages: {}");
-  put("examples/flutter_counter/build/app/outputs/flutter-apk/app-debug.apk", "test-only apk");
+  put("examples/flutter_counter/build/app/outputs/flutter-apk/app-release.apk", "test-only apk");
   put("bin/adb", "#!/bin/sh\nprintf '%s\\n' \"${FAKE_BOOT:-1}\"\n", 0o755);
   put("node_modules/.bin/agent-device", `#!/usr/bin/env node
 import { appendFileSync, writeFileSync } from 'node:fs';

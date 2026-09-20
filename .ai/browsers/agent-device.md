@@ -15,7 +15,7 @@ lockfile dependencies. `ANDROID_SERIAL` selects the emulator (default
 
 The repository owns `.ai/scripts/test-env-up.sh` and `test-env-down.sh`; invoke
 them through om-prepare-test-env rather than replacing them. The up command
-requires an already-booted emulator and a fresh APK. Before QA, build with
+requires an already-booted emulator and a fresh release APK. Before QA, build with
 `bash .ai/scripts/android-build.sh` while the demo emulator is stopped, then
 start `npm run android:emulator`. Follow `examples/flutter_counter/README.md`
 for the existing workspace installation and resource constraints. Missing SDKs

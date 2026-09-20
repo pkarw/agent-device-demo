@@ -11,7 +11,7 @@ const serial = process.env.ANDROID_SERIAL || "emulator-5554";
 const app = "dev.example.flutter_counter";
 const session = `pipeline-${createHash("sha256").update(`${root}:${serial}`).digest("hex").slice(0, 12)}`;
 const cli = path.join(root, "node_modules/.bin/agent-device");
-const apk = "examples/flutter_counter/build/app/outputs/flutter-apk/app-debug.apk";
+const apk = "examples/flutter_counter/build/app/outputs/flutter-apk/app-release.apk";
 const [operation, ...args] = process.argv.slice(2);
 mkdirSync(qa, { recursive: true });
 

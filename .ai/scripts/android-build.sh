@@ -7,7 +7,7 @@ if adb devices | awk 'NR > 1 && $2 == "device" { found=1 } END { exit !found }';
   echo 'Stop the Android emulator before building, then restart it with npm run android:emulator.' >&2
   exit 1
 fi
-flutter build apk --debug --target-platform android-x64
+flutter build apk --release --target-platform android-x64
 (cd android && ./gradlew --stop)
 # The next up run checks all build inputs before adopting this APK.
 node -e 'require("node:fs").rmSync(process.argv[1], {force:true})' "$ANDROID_DEMO_ROOT/.ai/qa/test-env-build-cache.json"
