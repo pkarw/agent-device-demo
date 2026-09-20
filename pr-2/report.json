@@ -1,0 +1,63 @@
+{
+  "runId": "qa-pr-2-20260920",
+  "mode": "pr",
+  "target": {
+    "prNumber": 2,
+    "title": "React Native Android counter demo",
+    "branch": "feat/react-native-counter",
+    "headSha": "6f3275526b48b585c46c64ea943f8de33eea2a1c"
+  },
+  "verdict": "PASS",
+  "environment": {
+    "baseUrl": "exp://127.0.0.1:46651",
+    "role": "demo (no login)",
+    "startedByThisRepo": true,
+    "browserProvider": "agent-device-react-native"
+  },
+  "scenario": [
+    {
+      "step": 1,
+      "priority": "P1",
+      "action": "Fresh native launch",
+      "expected": "Count 0; Reset disabled",
+      "observed": "Count 0; Reset disabled; native 540×960 PNG captured",
+      "result": "PASS",
+      "screenshot": "step-01-initial.png"
+    },
+    {
+      "step": 2,
+      "priority": "P1",
+      "action": "Tap Increment five times; assert each transition",
+      "expected": "Count 5; Reset enabled",
+      "observed": "Count 5; Reset enabled; native 540×960 PNG captured",
+      "result": "PASS",
+      "screenshot": "step-02-five.png"
+    },
+    {
+      "step": 3,
+      "priority": "P1",
+      "action": "Tap Reset counter",
+      "expected": "Count 0; Reset disabled",
+      "observed": "Count 0; Reset disabled; native 540×960 PNG captured",
+      "result": "PASS",
+      "screenshot": "step-03-reset.png"
+    },
+    {
+      "step": 4,
+      "priority": "P1",
+      "action": "Increment after reset",
+      "expected": "Count 1; Reset enabled",
+      "observed": "Count 1; Reset enabled; native 540×960 PNG captured",
+      "result": "PASS",
+      "screenshot": "step-04-again.png"
+    }
+  ],
+  "hasUiTest": true,
+  "notes": [
+    "All four PNGs visually inspected: values 0/5/0/1 and Reset states match native snapshots; no tutorial overlay.",
+    "Real Android 11/API 30 software emulator; Expo Go 57.0.9 hosts React Native 0.86.3. No browser used.",
+    "Evidence only, not QA sign-off or GitHub approval. Independent review is required.",
+    "Not exercised: physical devices, iOS, rotation, standalone production APK.",
+    "Private repository: screenshot links require GitHub access."
+  ]
+}
