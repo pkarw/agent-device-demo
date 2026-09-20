@@ -1,0 +1,25 @@
+{
+  "platform": "android",
+  "app": "dev.example.flutter_counter",
+  "serial": "emulator-5554",
+  "screenshots": [
+    {
+      "file": "01-counter-zero.png",
+      "counter": 0,
+      "width": 540,
+      "height": 960
+    },
+    {
+      "file": "02-counter-one.png",
+      "counter": 1,
+      "width": 540,
+      "height": 960
+    },
+    {
+      "file": "03-counter-five.png",
+      "counter": 5,
+      "width": 540,
+      "height": 960
+    }
+  ]
+}

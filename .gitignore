@@ -12,6 +12,8 @@
 
 # testing
 /coverage
+/.android-demo-tools/
+/.agent-device/
 
 # next.js
 /.next/

@@ -1,5 +1,9 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Android screenshot automation
+
+A Flutter counter app and a runnable [agent-device Android example](examples/flutter_counter/README.md) are included. With the emulator running, use `npm run android:screenshots` to capture counter values 0, 1, and 5 in `artifacts/android-counter/`.
+
 ## Getting Started
 
 First, run the development server:

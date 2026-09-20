@@ -1,0 +1,48 @@
+[
+  {
+    "command": [
+      "install",
+      "/workspace/examples/flutter_counter/build/app/outputs/flutter-apk/app-debug.apk",
+      "--platform",
+      "android",
+      "--serial",
+      "emulator-5554",
+      "--session",
+      "flutter-counter-9738"
+    ],
+    "status": 0,
+    "stdout": "Installed: dev.example.flutter_counter\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "open",
+      "dev.example.flutter_counter",
+      "--relaunch",
+      "--foreground",
+      "--platform",
+      "android",
+      "--serial",
+      "emulator-5554",
+      "--session",
+      "flutter-counter-9738"
+    ],
+    "status": 1,
+    "stdout": "",
+    "stderr": "Error (COMMAND_FAILED): Daemon request timed out\nHint: Retry with --debug and check daemon diagnostics logs. The daemon was reset after the timeout.\nDiagnostic ID: mu9t603v-69ef98e5\nDiagnostics Log: /home/mercato-sandboxes/.agent-device/logs/flutter-counter-9738/2026-09-20/2026-09-20T12-45-54-766Z-mu9t603v-69ef98e5.ndjson\n"
+  },
+  {
+    "command": [
+      "close",
+      "--platform",
+      "android",
+      "--serial",
+      "emulator-5554",
+      "--session",
+      "flutter-counter-9738"
+    ],
+    "status": 1,
+    "stdout": "",
+    "stderr": "Error (SESSION_NOT_FOUND): No active session\nHint: Run open first or pass an explicit device selector.\nDiagnostic ID: mu9t7xt1-c7d9d17c\nDiagnostics Log: /home/mercato-sandboxes/.agent-device/sessions/flutter-counter-9738/requests/885fb157a192665a.ndjson\n"
+  }
+]

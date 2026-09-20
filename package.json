@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "android:emulator": "bash scripts/android-emulator.sh",
+    "android:screenshots": "bash scripts/android-screenshots.sh"
   },
   "dependencies": {
     "next": "16.3.4",
@@ -17,6 +19,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "agent-device": "0.21.6",
     "eslint": "^9",
     "eslint-config-next": "16.3.4",
     "typescript": "^5"

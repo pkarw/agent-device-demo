@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    ".android-demo-tools/**",
+    "examples/flutter_counter/build/**",
+    "examples/flutter_counter/.dart_tool/**",
   ]),
 ]);
 

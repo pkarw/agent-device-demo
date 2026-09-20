@@ -1,0 +1,721 @@
+{
+  "success": true,
+  "data": {
+    "nodes": [
+      {
+        "index": 0,
+        "type": "android.widget.FrameLayout",
+        "identifier": "com.android.systemui:id/navigation_bar_frame",
+        "bundleId": "com.android.systemui",
+        "rect": {
+          "x": 0,
+          "y": 888,
+          "width": 540,
+          "height": 72
+        },
+        "enabled": true,
+        "selected": false,
+        "editable": false,
+        "password": false,
+        "hintShowing": false,
+        "visibleToUser": true,
+        "depth": 0,
+        "ref": "e1"
+      },
+      {
+        "index": 1,
+        "type": "android.widget.FrameLayout",
+        "bundleId": "com.android.systemui",
+        "rect": {
+          "x": 0,
+          "y": 888,
+          "width": 540,
+          "height": 72
+        },
+        "enabled": true,
+        "selected": false,
+        "editable": false,
+        "password": false,
+        "hintShowing": false,
+        "visibleToUser": true,
+        "depth": 1,
+        "parentIndex": 0,
+        "ref": "e2"
+      },
+      {
+        "index": 2,
+        "type": "android.widget.FrameLayout",
+        "identifier": "com.android.systemui:id/navigation_inflater",
+        "bundleId": "com.android.systemui",
+        "rect": {
+          "x": 0,
+          "y": 888,
+          "width": 540,
+          "height": 72
+        },
+        "enabled": true,
+        "selected": false,
+        "editable": false,
+        "password": false,
+        "hintShowing": false,
+        "visibleToUser": true,
+        "depth": 2,
+        "parentIndex": 1,
+        "ref": "e3"
+      },
+      {
+        "index": 3,
+        "type": "android.widget.FrameLayout",
+        "identifier": "com.android.systemui:id/horizontal",
+        "bundleId": "com.android.systemui",
+        "rect": {
+          "x": 0,
+          "y": 888,
+          "width": 540,
+          "height": 72
+        },
+        "enabled": true,
+        "selected": false,
+        "editable": false,
+        "password": false,
+        "hintShowing": false,
+        "visibleToUser": true,
+        "depth": 3,
+        "parentIndex": 2,
+        "ref": "e4"
+      },
+      {
+        "index": 4,
+        "type": "android.widget.FrameLayout",
+        "identifier": "com.android.systemui:id/nav_buttons",
+        "bundleId": "com.android.systemui",
+        "rect": {
+          "x": 0,
+          "y": 888,
+          "width": 540,
+          "height": 72
+        },
+        "enabled": true,
+        "selected": false,
+        "editable": false,
+        "password": false,
+        "hintShowing": false,
+        "visibleToUser": true,
+        "depth": 4,
+        "parentIndex": 3,
+        "ref": "e5"
+      },
+      {
+        "index": 5,
+        "type": "android.widget.LinearLayout",
+        "identifier": "com.android.systemui:id/ends_group",
+        "bundleId": "com.android.systemui",
+        "rect": {
+          "x": 0,
+          "y": 888,
+          "width": 540,
+          "height": 72
+        },
+        "enabled": true,
+        "selected": false,
+        "editable": false,
+        "password": false,
+        "hintShowing": false,
+        "visibleToUser": true,
+        "depth": 5,
+        "parentIndex": 4,
+        "ref": "e6"
+      },
+      {
+        "index": 6,
+        "type": "android.widget.RelativeLayout",
+        "bundleId": "com.android.systemui",
+        "rect": {
+          "x": 67,
+          "y": 888,
+          "width": 135,
+          "height": 72
+        },
+        "enabled": true,
+        "selected": false,
+        "editable": false,
+        "password": false,
+        "hintShowing": false,
+        "visibleToUser": true,
+        "depth": 6,
+        "parentIndex": 5,
+        "ref": "e7"
+      },
+      {
+        "index": 7,
+        "type": "android.widget.ImageView",
+        "label": "Back",
+        "identifier": "com.android.systemui:id/back",
+        "bundleId": "com.android.systemui",
+        "rect": {
+          "x": 74,
+          "y": 888,
+          "width": 120,
+          "height": 72
+        },
+        "enabled": true,
+        "selected": false,
+        "editable": false,
+        "password": false,
+        "hintShowing": false,
+        "visibleToUser": true,
+        "hittable": true,
+        "depth": 7,
+        "parentIndex": 6,
+        "ref": "e8"
+      },
+      {
+        "index": 8,
+        "type": "android.widget.RelativeLayout",
+        "bundleId": "com.android.systemui",
+        "rect": {
+          "x": 337,
+          "y": 888,
+          "width": 135,
+          "height": 72
+        },
+        "enabled": true,
+        "selected": false,
+        "editable": false,
+        "password": false,
+        "hintShowing": false,
+        "visibleToUser": true,
+        "depth": 6,
+        "parentIndex": 5,
+        "ref": "e9"
+      },
+      {
+        "index": 9,
+        "type": "android.widget.ImageView",
+        "label": "Overview",
+        "identifier": "com.android.systemui:id/recent_apps",
+        "bundleId": "com.android.systemui",
+        "rect": {
+          "x": 344,
+          "y": 888,
+          "width": 120,
+          "height": 72
+        },
+        "enabled": true,
+        "selected": false,
+        "editable": false,
+        "password": false,
+        "hintShowing": false,
+        "visibleToUser": true,
+        "hittable": true,
+        "depth": 7,
+        "parentIndex": 8,
+        "ref": "e10"
+      },
+      {
+        "index": 10,
+        "type": "android.widget.LinearLayout",
+        "identifier": "com.android.systemui:id/center_group",
+        "bundleId": "com.android.systemui",
+        "rect": {
+          "x": 210,
+          "y": 888,
+          "width": 120,
+          "height": 72
+        },
+        "enabled": true,
+        "selected": false,
+        "editable": false,
+        "password": false,
+        "hintShowing": false,
+        "visibleToUser": true,
+        "depth": 5,
+        "parentIndex": 4,
+        "ref": "e11"
+      },
+      {
+        "index": 11,
+        "type": "android.widget.ImageView",
+        "label": "Home",
+        "identifier": "com.android.systemui:id/home",
+        "bundleId": "com.android.systemui",
+        "rect": {
+          "x": 210,
+          "y": 888,
+          "width": 120,
+          "height": 72
+        },
+        "enabled": true,
+        "selected": false,
+        "editable": false,
+        "password": false,
+        "hintShowing": false,
+        "visibleToUser": true,
+        "hittable": true,
+        "depth": 6,
+        "parentIndex": 10,
+        "ref": "e12"
+      },
+      {
+        "index": 12,
+        "type": "android.widget.TextView",
+        "label": "12:59",
+        "value": "12:59",
+        "identifier": "com.android.systemui:id/clock",
+        "bundleId": "com.android.systemui",
+        "rect": {
+          "x": 12,
+          "y": 0,
+          "width": 65,
+          "height": 36
+        },
+        "enabled": true,
+        "selected": false,
+        "editable": false,
+        "password": false,
+        "hintShowing": false,
+        "visibleToUser": true,
+        "depth": 0,
+        "ref": "e13"
+      },
+      {
+        "index": 13,
+        "type": "android.widget.ImageView",
+        "label": "Android System notification: Connect to open Wi‑Fi network",
+        "bundleId": "com.android.systemui",
+        "rect": {
+          "x": 77,
+          "y": 0,
+          "width": 33,
+          "height": 36
+        },
+        "enabled": true,
+        "selected": false,
+        "editable": false,
+        "password": false,
+        "hintShowing": false,
+        "visibleToUser": true,
+        "depth": 0,
+        "ref": "e14"
+      },
+      {
+        "index": 14,
+        "type": "android.widget.ImageView",
+        "label": "Android System notification: Serial console enabled",
+        "bundleId": "com.android.systemui",
+        "rect": {
+          "x": 110,
+          "y": 0,
+          "width": 33,
+          "height": 36
+        },
+        "enabled": true,
+        "selected": false,
+        "editable": false,
+        "password": false,
+        "hintShowing": false,
+        "visibleToUser": true,
+        "depth": 0,
+        "ref": "e15"
+      },
+      {
+        "index": 15,
+        "type": "android.widget.FrameLayout",
+        "label": "Phone three bars.",
+        "identifier": "com.android.systemui:id/mobile_combo",
+        "bundleId": "com.android.systemui",
+        "rect": {
+          "x": 484,
+          "y": 1,
+          "width": 23,
+          "height": 33
+        },
+        "enabled": true,
+        "selected": false,
+        "editable": false,
+        "password": false,
+        "hintShowing": false,
+        "visibleToUser": true,
+        "depth": 0,
+        "ref": "e16"
+      },
+      {
+        "index": 16,
+        "type": "android.widget.ImageView",
+        "identifier": "com.android.systemui:id/mobile_signal",
+        "bundleId": "com.android.systemui",
+        "rect": {
+          "x": 484,
+          "y": 6,
+          "width": 23,
+          "height": 23
+        },
+        "enabled": true,
+        "selected": false,
+        "editable": false,
+        "password": false,
+        "hintShowing": false,
+        "visibleToUser": true,
+        "depth": 1,
+        "parentIndex": 15,
+        "ref": "e17"
+      },
+      {
+        "index": 17,
+        "type": "android.widget.LinearLayout",
+        "label": "Battery charging, 100 percent.",
+        "identifier": "com.android.systemui:id/battery",
+        "bundleId": "com.android.systemui",
+        "rect": {
+          "x": 516,
+          "y": 0,
+          "width": 12,
+          "height": 36
+        },
+        "enabled": true,
+        "selected": false,
+        "editable": false,
+        "password": false,
+        "hintShowing": false,
+        "visibleToUser": true,
+        "depth": 0,
+        "ref": "e18"
+      },
+      {
+        "index": 18,
+        "type": "android.widget.ImageView",
+        "bundleId": "com.android.systemui",
+        "rect": {
+          "x": 516,
+          "y": 7,
+          "width": 12,
+          "height": 20
+        },
+        "enabled": true,
+        "selected": false,
+        "editable": false,
+        "password": false,
+        "hintShowing": false,
+        "visibleToUser": true,
+        "depth": 1,
+        "parentIndex": 17,
+        "ref": "e19"
+      },
+      {
+        "index": 19,
+        "type": "android.widget.FrameLayout",
+        "bundleId": "dev.example.flutter_counter",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 540,
+          "height": 960
+        },
+        "enabled": true,
+        "selected": false,
+        "editable": false,
+        "password": false,
+        "hintShowing": false,
+        "visibleToUser": true,
+        "depth": 0,
+        "ref": "e20"
+      },
+      {
+        "index": 20,
+        "type": "android.widget.LinearLayout",
+        "bundleId": "dev.example.flutter_counter",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 540,
+          "height": 888
+        },
+        "enabled": true,
+        "selected": false,
+        "editable": false,
+        "password": false,
+        "hintShowing": false,
+        "visibleToUser": true,
+        "depth": 1,
+        "parentIndex": 19,
+        "ref": "e21"
+      },
+      {
+        "index": 21,
+        "type": "android.widget.FrameLayout",
+        "identifier": "android:id/content",
+        "bundleId": "dev.example.flutter_counter",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 540,
+          "height": 888
+        },
+        "enabled": true,
+        "selected": false,
+        "editable": false,
+        "password": false,
+        "hintShowing": false,
+        "visibleToUser": true,
+        "depth": 2,
+        "parentIndex": 20,
+        "ref": "e22"
+      },
+      {
+        "index": 22,
+        "type": "android.widget.FrameLayout",
+        "bundleId": "dev.example.flutter_counter",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 540,
+          "height": 888
+        },
+        "enabled": true,
+        "selected": false,
+        "editable": false,
+        "password": false,
+        "hintShowing": false,
+        "visibleToUser": true,
+        "hittable": true,
+        "depth": 3,
+        "parentIndex": 21,
+        "ref": "e23"
+      },
+      {
+        "index": 23,
+        "type": "android.view.View",
+        "bundleId": "dev.example.flutter_counter",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 540,
+          "height": 888
+        },
+        "enabled": true,
+        "selected": false,
+        "editable": false,
+        "password": false,
+        "hintShowing": false,
+        "visibleToUser": true,
+        "depth": 4,
+        "parentIndex": 22,
+        "ref": "e24"
+      },
+      {
+        "index": 24,
+        "type": "android.view.View",
+        "bundleId": "dev.example.flutter_counter",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 540,
+          "height": 888
+        },
+        "enabled": true,
+        "selected": false,
+        "editable": false,
+        "password": false,
+        "hintShowing": false,
+        "visibleToUser": true,
+        "depth": 5,
+        "parentIndex": 23,
+        "ref": "e25"
+      },
+      {
+        "index": 25,
+        "type": "android.view.View",
+        "bundleId": "dev.example.flutter_counter",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 540,
+          "height": 888
+        },
+        "enabled": true,
+        "selected": false,
+        "editable": false,
+        "password": false,
+        "hintShowing": false,
+        "visibleToUser": true,
+        "depth": 6,
+        "parentIndex": 24,
+        "ref": "e26"
+      },
+      {
+        "index": 26,
+        "type": "android.view.View",
+        "bundleId": "dev.example.flutter_counter",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 540,
+          "height": 888
+        },
+        "enabled": true,
+        "selected": false,
+        "editable": false,
+        "password": false,
+        "hintShowing": false,
+        "visibleToUser": true,
+        "depth": 7,
+        "parentIndex": 25,
+        "ref": "e27"
+      },
+      {
+        "index": 27,
+        "type": "android.view.View",
+        "bundleId": "dev.example.flutter_counter",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 540,
+          "height": 120
+        },
+        "enabled": true,
+        "selected": false,
+        "editable": false,
+        "password": false,
+        "hintShowing": false,
+        "visibleToUser": true,
+        "depth": 8,
+        "parentIndex": 26,
+        "ref": "e28"
+      },
+      {
+        "index": 28,
+        "type": "android.view.View",
+        "label": "Flutter Demo Home Page",
+        "bundleId": "dev.example.flutter_counter",
+        "rect": {
+          "x": 24,
+          "y": 57,
+          "width": 370,
+          "height": 42
+        },
+        "enabled": true,
+        "selected": false,
+        "editable": false,
+        "password": false,
+        "hintShowing": false,
+        "visibleToUser": true,
+        "hittable": true,
+        "depth": 9,
+        "parentIndex": 27,
+        "ref": "e29"
+      },
+      {
+        "index": 29,
+        "type": "android.view.View",
+        "label": "You have pushed the button this many times:",
+        "bundleId": "dev.example.flutter_counter",
+        "rect": {
+          "x": 53,
+          "y": 462,
+          "width": 434,
+          "height": 30
+        },
+        "enabled": true,
+        "selected": false,
+        "editable": false,
+        "password": false,
+        "hintShowing": false,
+        "visibleToUser": true,
+        "hittable": true,
+        "depth": 8,
+        "parentIndex": 26,
+        "ref": "e30"
+      },
+      {
+        "index": 30,
+        "type": "android.view.View",
+        "label": "5",
+        "bundleId": "dev.example.flutter_counter",
+        "rect": {
+          "x": 258,
+          "y": 492,
+          "width": 24,
+          "height": 54
+        },
+        "enabled": true,
+        "selected": false,
+        "editable": false,
+        "password": false,
+        "hintShowing": false,
+        "visibleToUser": true,
+        "hittable": true,
+        "depth": 8,
+        "parentIndex": 26,
+        "ref": "e31"
+      },
+      {
+        "index": 31,
+        "type": "android.widget.Button",
+        "label": "Increment",
+        "bundleId": "dev.example.flutter_counter",
+        "rect": {
+          "x": 432,
+          "y": 780,
+          "width": 84,
+          "height": 84
+        },
+        "enabled": true,
+        "selected": false,
+        "editable": false,
+        "password": false,
+        "hintShowing": false,
+        "visibleToUser": true,
+        "hittable": true,
+        "depth": 8,
+        "parentIndex": 26,
+        "ref": "e32"
+      }
+    ],
+    "truncated": false,
+    "appName": "dev.example.flutter_counter",
+    "appBundleId": "dev.example.flutter_counter",
+    "visibility": {
+      "partial": false,
+      "visibleNodeCount": 32,
+      "totalNodeCount": 32,
+      "reasons": []
+    },
+    "androidSnapshot": {
+      "backend": "android-helper",
+      "helperVersion": "0.21.6",
+      "helperApiVersion": "2",
+      "helperTransport": "persistent-session",
+      "helperSessionReused": true,
+      "installReason": "current",
+      "waitForIdleTimeoutMs": 500,
+      "waitForIdleQuietMs": 100,
+      "timeoutMs": 2000,
+      "maxDepth": 128,
+      "maxNodes": 5000,
+      "rootPresent": true,
+      "captureMode": "interactive-windows",
+      "windowCount": 3,
+      "nodeCount": 52,
+      "helperTruncated": false,
+      "elapsedMs": 119
+    },
+    "snapshotQuality": {
+      "state": "healthy",
+      "backend": "android-helper"
+    },
+    "snapshotDiagnostics": {
+      "stats": {
+        "count": 48,
+        "p50Ms": 152,
+        "p95Ms": 1960,
+        "maxMs": 2538,
+        "slowThresholdMs": 1500,
+        "platform": "android",
+        "backends": {
+          "android": 48
+        }
+      }
+    },
+    "refsGeneration": 572857
+  }
+}

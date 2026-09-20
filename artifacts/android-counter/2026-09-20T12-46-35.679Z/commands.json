@@ -1,0 +1,66 @@
+[
+  {
+    "command": [
+      "install",
+      "/workspace/examples/flutter_counter/build/app/outputs/flutter-apk/app-debug.apk",
+      "--platform",
+      "android",
+      "--serial",
+      "emulator-5554",
+      "--session",
+      "flutter-counter-11328"
+    ],
+    "status": 0,
+    "stdout": "Installed: dev.example.flutter_counter\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "open",
+      "dev.example.flutter_counter",
+      "--relaunch",
+      "--foreground",
+      "--timeout",
+      "300000",
+      "--platform",
+      "android",
+      "--serial",
+      "emulator-5554",
+      "--session",
+      "flutter-counter-11328"
+    ],
+    "status": 0,
+    "stdout": "Opened: dev.example.flutter_counter\nSession state: /home/mercato-sandboxes/.agent-device/sessions/flutter-counter-11328\nPage: dev.example.flutter_counter\nApp: dev.example.flutter_counter\nSnapshot: 5 nodes\nA system surface (notification shade, quick settings, or another system overlay) covers the app, so this snapshot shows that surface. Interact with it or dismiss it (press back or swipe up) to reach app content.\n@e1 [image] \"Back\"\n@e2 [image] \"Overview\"\n@e3 [image] \"Home\"\n@e4 [button] \"Close app\"\n@e5 [button] \"Wait\"\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "wait",
+      "label=\"0\"",
+      "60000",
+      "--platform",
+      "android",
+      "--serial",
+      "emulator-5554",
+      "--session",
+      "flutter-counter-11328"
+    ],
+    "status": 1,
+    "stdout": "",
+    "stderr": "Error (COMMAND_FAILED): wait timed out for selector: label=\"0\"\nHint: A system surface (notification shade, quick settings, or another system overlay) covers the app, so this snapshot shows that surface. Interact with it or dismiss it (press back or swipe up) to reach app content.\nDiagnostic ID: mu9ta21x-fee6035a\nDiagnostics Log: /home/mercato-sandboxes/.agent-device/sessions/flutter-counter-11328/requests/f5258cd249079318.ndjson\n"
+  },
+  {
+    "command": [
+      "close",
+      "--platform",
+      "android",
+      "--serial",
+      "emulator-5554",
+      "--session",
+      "flutter-counter-11328"
+    ],
+    "status": 0,
+    "stdout": "Closed: flutter-counter-11328\n",
+    "stderr": ""
+  }
+]
