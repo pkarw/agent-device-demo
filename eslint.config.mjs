@@ -15,6 +15,8 @@ const eslintConfig = defineConfig([
     ".android-demo-tools/**",
     "examples/flutter_counter/build/**",
     "examples/flutter_counter/.dart_tool/**",
+    "examples/react_native_counter/dist-android/**",
+    "examples/react_native_counter/.expo/**",
   ]),
 ]);
 

@@ -29,6 +29,12 @@ Linux-specific; it reuses the installed tools under `.android-demo-tools/`.
 
 ## 📸 Save screenshots
 
+For the complete repeatable scenario (launch, increment, reset, four screenshots
+and session cleanup), run `npm run android:react-native:screenshots`. Optional:
+`npm run android:react-native:screenshots -- .ai/qa/artifacts_my-run`.
+
+For individual provider operations on an already-open environment:
+
 ```bash
 bash .ai/scripts/react-native-device.sh snapshot
 # Use a label/ref from that snapshot:

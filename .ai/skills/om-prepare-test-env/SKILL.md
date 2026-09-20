@@ -1,5 +1,12 @@
 # Native Android environment
 
+When `browser.provider` is `agent-device-react-native`, use the matching
+`.ai/browsers/agent-device-react-native.md` descriptor. The same repository-owned
+up/down entrypoints dispatch to the React Native adapter. Its base URL is the
+recorded local Expo `exp://` URI; its descriptor owns Metro and one ADB reverse
+mapping, but never the emulator. Verify cold and warm runs via the scripts and
+close with the down script. No Flutter APK build is needed for this provider.
+
 Read and follow the installed `om-prepare-test-env` skill. This repository owns
 the unmarked `.ai/scripts/test-env-up.sh` and `test-env-down.sh` entrypoints;
 run those unchanged in auto/reuse mode. No database or ephemeral services exist.
