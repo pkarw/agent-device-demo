@@ -11,6 +11,53 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_counter/main.dart';
 
 void main() {
+  testWidgets('Reset is disabled at zero', (WidgetTester tester) async {
+    await tester.pumpWidget(const MyApp());
+
+    expect(
+      tester.widget<OutlinedButton>(find.byType(OutlinedButton)).onPressed,
+      isNull,
+    );
+    await tester.tap(find.text('Reset counter'));
+    await tester.pump();
+    expect(find.text('0'), findsOneWidget);
+  });
+
+  testWidgets('Reset clears multiple increments and allows counting again', (
+    WidgetTester tester,
+  ) async {
+    await tester.pumpWidget(const MyApp());
+    for (var i = 0; i < 5; i++) {
+      await tester.tap(find.byTooltip('Increment'));
+      await tester.pump();
+    }
+    expect(find.text('5'), findsOneWidget);
+    expect(
+      tester.widget<OutlinedButton>(find.byType(OutlinedButton)).onPressed,
+      isNotNull,
+    );
+
+    await tester.tap(find.text('Reset counter'));
+    await tester.pump();
+    expect(find.text('0'), findsOneWidget);
+    expect(find.text('5'), findsNothing);
+    expect(
+      tester.widget<OutlinedButton>(find.byType(OutlinedButton)).onPressed,
+      isNull,
+    );
+
+    await tester.tap(find.text('Reset counter'));
+    await tester.pump();
+    expect(find.text('0'), findsOneWidget);
+    await tester.tap(find.byTooltip('Increment'));
+    await tester.pump();
+    expect(find.text('1'), findsOneWidget);
+    expect(
+      tester.widget<OutlinedButton>(find.byType(OutlinedButton)).onPressed,
+      isNotNull,
+    );
+  });
+
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(const MyApp());

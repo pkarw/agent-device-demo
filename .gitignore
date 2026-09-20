@@ -13,6 +13,7 @@
 # testing
 /coverage
 /.android-demo-tools/
+/.android-demo-tools
 /.agent-device/
 /.ai/qa/artifacts_*/
 /.ai/qa/test-env*.json
