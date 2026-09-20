@@ -1,0 +1,293 @@
+[
+  {
+    "index": 19,
+    "type": "android.widget.FrameLayout",
+    "bundleId": "dev.example.flutter_counter",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "width": 540,
+      "height": 960
+    },
+    "enabled": true,
+    "selected": false,
+    "editable": false,
+    "password": false,
+    "hintShowing": false,
+    "visibleToUser": true,
+    "depth": 0,
+    "ref": "e20"
+  },
+  {
+    "index": 20,
+    "type": "android.widget.LinearLayout",
+    "bundleId": "dev.example.flutter_counter",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "width": 540,
+      "height": 888
+    },
+    "enabled": true,
+    "selected": false,
+    "editable": false,
+    "password": false,
+    "hintShowing": false,
+    "visibleToUser": true,
+    "depth": 1,
+    "parentIndex": 19,
+    "ref": "e21"
+  },
+  {
+    "index": 21,
+    "type": "android.widget.FrameLayout",
+    "identifier": "android:id/content",
+    "bundleId": "dev.example.flutter_counter",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "width": 540,
+      "height": 888
+    },
+    "enabled": true,
+    "selected": false,
+    "editable": false,
+    "password": false,
+    "hintShowing": false,
+    "visibleToUser": true,
+    "depth": 2,
+    "parentIndex": 20,
+    "ref": "e22"
+  },
+  {
+    "index": 22,
+    "type": "android.widget.FrameLayout",
+    "bundleId": "dev.example.flutter_counter",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "width": 540,
+      "height": 888
+    },
+    "enabled": true,
+    "selected": false,
+    "editable": false,
+    "password": false,
+    "hintShowing": false,
+    "visibleToUser": true,
+    "hittable": true,
+    "depth": 3,
+    "parentIndex": 21,
+    "ref": "e23"
+  },
+  {
+    "index": 23,
+    "type": "android.view.View",
+    "bundleId": "dev.example.flutter_counter",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "width": 540,
+      "height": 888
+    },
+    "enabled": true,
+    "selected": false,
+    "editable": false,
+    "password": false,
+    "hintShowing": false,
+    "visibleToUser": true,
+    "depth": 4,
+    "parentIndex": 22,
+    "ref": "e24"
+  },
+  {
+    "index": 24,
+    "type": "android.view.View",
+    "bundleId": "dev.example.flutter_counter",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "width": 540,
+      "height": 888
+    },
+    "enabled": true,
+    "selected": false,
+    "editable": false,
+    "password": false,
+    "hintShowing": false,
+    "visibleToUser": true,
+    "depth": 5,
+    "parentIndex": 23,
+    "ref": "e25"
+  },
+  {
+    "index": 25,
+    "type": "android.view.View",
+    "bundleId": "dev.example.flutter_counter",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "width": 540,
+      "height": 888
+    },
+    "enabled": true,
+    "selected": false,
+    "editable": false,
+    "password": false,
+    "hintShowing": false,
+    "visibleToUser": true,
+    "depth": 6,
+    "parentIndex": 24,
+    "ref": "e26"
+  },
+  {
+    "index": 26,
+    "type": "android.view.View",
+    "bundleId": "dev.example.flutter_counter",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "width": 540,
+      "height": 888
+    },
+    "enabled": true,
+    "selected": false,
+    "editable": false,
+    "password": false,
+    "hintShowing": false,
+    "visibleToUser": true,
+    "depth": 7,
+    "parentIndex": 25,
+    "ref": "e27"
+  },
+  {
+    "index": 27,
+    "type": "android.view.View",
+    "bundleId": "dev.example.flutter_counter",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "width": 540,
+      "height": 120
+    },
+    "enabled": true,
+    "selected": false,
+    "editable": false,
+    "password": false,
+    "hintShowing": false,
+    "visibleToUser": true,
+    "depth": 8,
+    "parentIndex": 26,
+    "ref": "e28"
+  },
+  {
+    "index": 28,
+    "type": "android.view.View",
+    "label": "Flutter Demo Home Page",
+    "bundleId": "dev.example.flutter_counter",
+    "rect": {
+      "x": 24,
+      "y": 57,
+      "width": 370,
+      "height": 42
+    },
+    "enabled": true,
+    "selected": false,
+    "editable": false,
+    "password": false,
+    "hintShowing": false,
+    "visibleToUser": true,
+    "hittable": true,
+    "depth": 9,
+    "parentIndex": 27,
+    "ref": "e29"
+  },
+  {
+    "index": 29,
+    "type": "android.view.View",
+    "label": "You have pushed the button this many times:",
+    "bundleId": "dev.example.flutter_counter",
+    "rect": {
+      "x": 53,
+      "y": 414,
+      "width": 434,
+      "height": 30
+    },
+    "enabled": true,
+    "selected": false,
+    "editable": false,
+    "password": false,
+    "hintShowing": false,
+    "visibleToUser": true,
+    "hittable": true,
+    "depth": 8,
+    "parentIndex": 26,
+    "ref": "e30"
+  },
+  {
+    "index": 30,
+    "type": "android.view.View",
+    "label": "0",
+    "bundleId": "dev.example.flutter_counter",
+    "rect": {
+      "x": 258,
+      "y": 444,
+      "width": 24,
+      "height": 54
+    },
+    "enabled": true,
+    "selected": false,
+    "editable": false,
+    "password": false,
+    "hintShowing": false,
+    "visibleToUser": true,
+    "hittable": true,
+    "depth": 8,
+    "parentIndex": 26,
+    "ref": "e31"
+  },
+  {
+    "index": 31,
+    "type": "android.widget.Button",
+    "label": "Reset counter",
+    "bundleId": "dev.example.flutter_counter",
+    "rect": {
+      "x": 154,
+      "y": 522,
+      "width": 232,
+      "height": 72
+    },
+    "enabled": false,
+    "selected": false,
+    "editable": false,
+    "password": false,
+    "hintShowing": false,
+    "visibleToUser": true,
+    "hittable": true,
+    "depth": 8,
+    "parentIndex": 26,
+    "ref": "e32"
+  },
+  {
+    "index": 32,
+    "type": "android.widget.Button",
+    "label": "Increment",
+    "bundleId": "dev.example.flutter_counter",
+    "rect": {
+      "x": 432,
+      "y": 780,
+      "width": 84,
+      "height": 84
+    },
+    "enabled": true,
+    "selected": false,
+    "editable": false,
+    "password": false,
+    "hintShowing": false,
+    "visibleToUser": true,
+    "hittable": true,
+    "depth": 8,
+    "parentIndex": 26,
+    "ref": "e33"
+  }
+]
