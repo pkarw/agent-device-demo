@@ -42,8 +42,8 @@ repository access. Independent GitHub approval is required (no self-approval).
 
 ### Phase 1: App and automation
 
-- [ ] 1.1 Scaffold the app and implement/test counter behavior.
-- [ ] 1.2 Add reproducible Android launch, QA provider and README instructions.
+- [x] 1.1 Scaffold the app and implement/test counter behavior. — 2995380
+- [x] 1.2 Add reproducible Android launch, QA provider and README instructions. — 381fc74
 
 ### Phase 2: Verification
 
