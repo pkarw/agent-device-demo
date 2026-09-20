@@ -39,8 +39,8 @@ the PR author to approve their own PR; independent approval remains required.
 
 ### Phase 1: Implementation
 
-- [ ] 1.1 Complete the configured pipeline descriptors and publish the demo README.
-- [ ] 1.2 Add Reset counter and regression tests.
+- [x] 1.1 Complete the configured pipeline descriptors and publish the demo README. — 0f8ae78
+- [x] 1.2 Add Reset counter and regression tests. — 5db785c
 
 ### Phase 2: Verification
 
