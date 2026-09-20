@@ -19,16 +19,18 @@ function snapshot() {
   return JSON.parse(run('snapshot')).data.nodes.filter(n => n.bundleId === 'host.exp.exponent');
 }
 function count(nodes) {
-  const label = nodes.find(n => /^Count: \d+$/.test(n.label || ''))?.label;
-  assert.ok(label, 'Counter accessibility label must be visible');
-  return Number(label.slice(7));
+  const matches = nodes.filter(n => n.identifier === 'counter-value');
+  assert.equal(matches.length, 1, 'Exactly one counter must be visible');
+  assert.match(matches[0].value, /^\d+$/);
+  return Number(matches[0].value);
 }
 function press(label, before, after) {
   for (let attempt = 0; attempt < 5; attempt++) {
     const nodes = snapshot();
-    const button = nodes.find(n => n.label === label);
+    const button = nodes.find(n => n.label === label && n.type === 'android.widget.Button');
     assert.ok(button?.enabled, `${label} must be enabled`);
-    run('interact', 'press', `label="${button.label}"`, '--hold-ms', '1', '--settle');
+    assert.ok(button.rect, 'Observed button bounds are required');
+    run('interact', 'press', String(Math.round(button.rect.x + button.rect.width / 2)), String(Math.round(button.rect.y + button.rect.height / 2)), '--hold-ms', '1', '--settle');
     const actual = count(snapshot());
     if (actual === after) return;
     assert.equal(actual, before, 'Unexpected counter transition');
@@ -36,10 +38,10 @@ function press(label, before, after) {
   throw new Error(`Counter did not reach ${after}`);
 }
 function capture(name, value) {
-  run('assert', `label="Count: ${value}"`);
+  run('assert', `label="${value}"`);
   const nodes = snapshot();
   assert.equal(count(nodes), value);
-  assert.equal(nodes.find(n => n.label === 'Reset counter')?.enabled, value > 0);
+  assert.equal(nodes.find(n => n.label === 'Reset counter' && n.type === 'android.widget.Button')?.enabled, value > 0);
   const file = `${name}.png`;
   run('screenshot', path.join(output, file));
   const png = readFileSync(path.join(output, file));

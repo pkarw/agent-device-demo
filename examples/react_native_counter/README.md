@@ -39,7 +39,7 @@ For individual provider operations on an already-open environment:
 bash .ai/scripts/react-native-device.sh snapshot
 # Use a label/ref from that snapshot:
 bash .ai/scripts/react-native-device.sh interact press 'label="Increment"' --hold-ms 1 --settle
-bash .ai/scripts/react-native-device.sh assert 'label="Count: 1"'
+bash .ai/scripts/react-native-device.sh assert 'label="1"'
 bash .ai/scripts/react-native-device.sh screenshot .ai/qa/artifacts_manual/counter-one.png
 sh .ai/scripts/test-env-down.sh
 ```

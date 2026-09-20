@@ -4,6 +4,7 @@ import { closeSync, existsSync, mkdirSync, openSync, readFileSync, renameSync, r
 import net from 'node:net';
 import path from 'node:path';
 import { setTimeout as delay } from 'node:timers/promises';
+import { onboardingAction } from './react-native-onboarding.mjs';
 
 const root = process.cwd();
 const project = path.join(root, 'examples/react_native_counter');
@@ -73,10 +74,26 @@ async function freePort() {
   await new Promise(resolve => server.close(resolve));
   return port;
 }
-function health() {
-  device('wait', 'label="Increment"', '120000');
-  const snapshot = JSON.parse(device('snapshot', '--json'));
-  if (!snapshot.data.nodes.some(n => n.bundleId === app && n.label === 'Increment')) throw new Error('React Native counter not visible');
+async function health() {
+  const deadline = Date.now() + 120000;
+  let snapshot;
+  let dismissedTutorial = false;
+  let visible = false;
+  do {
+    snapshot = JSON.parse(device('snapshot', '--json'));
+    const nodes = snapshot.data.nodes.filter(n => n.bundleId === app);
+    const action = onboardingAction(snapshot.data.nodes, dismissedTutorial);
+    if (action) {
+      device('press', String(Math.round(action.rect.x + action.rect.width / 2)), String(Math.round(action.rect.y + action.rect.height / 2)), '--hold-ms', '1', '--settle');
+      dismissedTutorial ||= action.tutorial;
+    } else if (nodes.some(n => n.label === 'Increment') && !nodes.some(n => n.label === 'SDK version: 57.0.0')) {
+      visible = true; break;
+    }
+    await delay(1000);
+  } while (Date.now() < deadline);
+  mkdirSync(path.join(qa, 'artifacts_rn-doctor'), { recursive: true });
+  writeFileSync(path.join(qa, 'artifacts_rn-doctor/snapshot.json'), JSON.stringify(snapshot, null, 2));
+  if (!visible) throw new Error('React Native counter not visible');
   const output = path.join(qa, 'artifacts_rn-doctor/screen.png');
   mkdirSync(path.dirname(output), { recursive: true });
   device('screenshot', output);
@@ -107,11 +124,12 @@ try {
         run('curl', ['-fL', '--retry', '2', '--connect-timeout', '20', '-o', apk, 'https://github.com/expo/expo-go-releases/releases/download/Expo-Go-57.0.9/Expo-Go-57.0.9.apk']);
       }
       if (createHash('sha256').update(readFileSync(apk)).digest('hex') !== expectedApkHash) throw new Error('Expo Go APK checksum mismatch');
-      console.log(device('install', apk));
+      const installed = adb('shell', 'dumpsys', 'package', app);
+      if (!installed.includes('versionName=57.0.9')) console.log(device('install', apk));
       const port = await freePort();
       const output = openSync(path.join(qa, 'react-native-metro.log'), 'a');
-      const metro = spawn(process.execPath, [expo, 'start', project, '--go', '--offline', '--localhost', '--port', String(port), '--max-workers', '2'], {
-        cwd: project, env: { ...process.env, CI: '1', NODE_ENV: 'development', EXPO_NO_TELEMETRY: '1' },
+      const metro = spawn(process.execPath, [expo, 'start', project, '--go', '--localhost', '--port', String(port), '--max-workers', '2'], {
+        cwd: project, env: { ...process.env, CI: '1', NODE_ENV: 'development', EXPO_OFFLINE: '1', EXPO_NO_TELEMETRY: '1', EXPO_UNSTABLE_HEADLESS: '1', NODE_OPTIONS: `${process.env.NODE_OPTIONS || ''} --dns-result-order=ipv4first` },
         detached: true, stdio: ['ignore', output, output],
       });
       closeSync(output); metro.unref();
@@ -128,15 +146,15 @@ try {
       adb('reverse', `tcp:${port}`, `tcp:${port}`); state.reverseCreated = true; writeState(state);
     }
     state.sessionOpened = true; writeState(state);
-    console.log(device('open', app, ...(reused ? [] : [state.baseUrl, '--relaunch']), '--foreground', '--timeout', '300000'));
-    health();
+    console.log(device('open', app, state.baseUrl, ...(reused ? [] : ['--relaunch']), '--foreground', '--timeout', '300000'));
+    await health();
     state = { ...state, status: 'running', browser: { ...state.browser, installed: true }, checkedAt: new Date().toISOString() };
     writeState(state);
     console.log(`TEST_ENV_STATUS=running\nTEST_ENV_BASE_URL=${state.baseUrl}\nTEST_ENV_DESCRIPTOR=.ai/qa/test-env.json\nTEST_ENV_REUSED=${reused ? 1 : 0}\nBROWSER_PROVIDER=agent-device-react-native\nBROWSER_INSTALLED=1\nBROWSER_COMMAND=bash .ai/scripts/react-native-device.sh\nBROWSER_VERSION=0.21.6\nBROWSER_NOTES=Native Android Expo Go; no browser`);
   } else {
     const state = readState();
     if (state?.status !== 'running' || state.device?.session !== session) throw new Error('Start the environment with sh .ai/scripts/test-env-up.sh');
-    if (operation === 'doctor') console.log(JSON.stringify(health()));
+    if (operation === 'doctor') console.log(JSON.stringify(await health()));
     else if (operation === 'snapshot') console.log(device('snapshot', '--json'));
     else if (operation === 'interact') {
       if (!['press', 'scroll', 'back'].includes(args[0])) throw new Error('Unsupported native action');

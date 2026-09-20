@@ -40,8 +40,9 @@ target is the local Metro base URL bound to this worktree's Expo Go session.
 
 `bash .ai/scripts/react-native-device.sh snapshot` emits accessibility JSON.
 Use only references/labels observed in the latest snapshot. App nodes belong to
-`host.exp.exponent`; the counter label is `Count: N` and Reset has an `enabled`
-state. Re-snapshot after every mutation.
+`host.exp.exponent`; the counter has identifier `counter-value` and numeric
+`value`. Reset's `android.widget.Button` node has an `enabled` state (do not
+confuse it with its text child). Re-snapshot after every mutation.
 
 ## interact
 
@@ -49,6 +50,9 @@ state. Re-snapshot after every mutation.
 presses a control. `scroll` and `back` are also supported. Assert the resulting
 counter; software-emulator taps can be ignored. Retry only an unchanged count,
 at most five attempts, and fail on unexpected transitions.
+If raw Android refs do not resolve to the intended control, use `interact press
+'<x>' '<y>'` at the center of its bounds from the latest snapshot, then assert
+the transition. The regression runner uses this observed-bounds path.
 
 ## assert
 
