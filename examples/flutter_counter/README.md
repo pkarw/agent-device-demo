@@ -5,6 +5,24 @@ This is Flutter's generated counter demo. The automation uses
 APK, launch it, tap the accessible **Increment** button five times, verify the
 counter, and save screenshots at **0**, **1**, and **5**.
 
+The demo also has a **Reset counter** button. It is disabled at zero, enabled
+after incrementing, and returns the count to zero without restarting the app.
+
+## PR screenshot QA
+
+The OM pipeline uses `agent-device` directly on Android (not a browser). Stop the
+demo emulator, then run `bash .ai/scripts/android-build.sh` to build its small
+x86_64 release APK. Restart with `npm run android:emulator` and wait for Android
+to boot. `sh .ai/scripts/test-env-up.sh` installs and opens the fresh release APK;
+`sh .ai/scripts/test-env-down.sh` closes only its automation session.
+
+The provider descriptor is `.ai/browsers/agent-device.md`. `om-auto-qa-pr`
+captures initial zero/disabled, incremented/enabled, reset zero/disabled, and
+increment-after-reset states. It publishes evidence on a separate branch; private
+repository screenshots require GitHub access. QA evidence does not grant a
+review or merge approval. The original debug screenshot runner below still uses
+`app-debug.apk`, so rebuild that APK separately when using it after source edits.
+
 ## Run in this workspace
 
 The Android and Flutter tools are already installed locally. From `/workspace`,

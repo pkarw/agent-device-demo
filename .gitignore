@@ -13,7 +13,13 @@
 # testing
 /coverage
 /.android-demo-tools/
+/.android-demo-tools
 /.agent-device/
+/.ai/qa/artifacts_*/
+/.ai/qa/test-env*.json
+/.ai/qa/test-env.env
+/.ai/qa/test-env.lock/
+/examples/flutter_counter/android/.kotlin/
 
 # next.js
 /.next/
