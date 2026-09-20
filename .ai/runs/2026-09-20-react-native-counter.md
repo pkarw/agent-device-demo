@@ -47,5 +47,13 @@ repository access. Independent GitHub approval is required (no self-approval).
 
 ### Phase 2: Verification
 
-- [ ] 2.1 Validate types, tests and Android bundle; run the shared gate and review.
-- [ ] 2.2 Capture and publish real Android screenshots through om-auto-qa-pr.
+- [x] 2.1 Validate types, tests and Android bundle; run the shared gate and review. — 6f32755
+- [x] 2.2 Capture and publish real Android screenshots through om-auto-qa-pr. — 6f32755
+
+## Verification evidence
+
+- Full seven-command validation gate passed against `6f32755`.
+- [Code review](https://github.com/pkarw/agent-device-demo/pull/2#issuecomment-5750308034): code verdict approve; GitHub rejects self-approval, so independent approval remains required.
+- [Native Android QA PASS](https://github.com/pkarw/agent-device-demo/pull/2#issuecomment-5750322928): four visually inspected 540×960 screenshots, 0 → 5 → reset 0 → 1, with Reset disabled/enabled assertions. Evidence is on `qa-evidence-pr-2`, not this source branch.
+- Cold launch, warm reuse, the committed screenshot regression, and idempotent teardown passed. Android emulator was reused and left running; owned Metro/session/reverse mapping were closed.
+- Final plan/README evidence links are documentation-only; app and automation source remain at the reviewed and QA-tested revision above.

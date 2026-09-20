@@ -50,6 +50,17 @@ increment. Screenshots, accessibility snapshots and reports are published on a
 separate evidence branch. Private-repository images require GitHub access.
 Evidence-only QA does not grant approval or merge a PR.
 
+### ✅ Published Android run
+
+[QA report and screenshots on PR #2](https://github.com/pkarw/agent-device-demo/pull/2#issuecomment-5750322928)
+verify **0 → 5 → reset to 0 → 1**, including Reset's enabled state.
+The four real 540×960 captures are saved separately from source code:
+[initial zero](https://github.com/pkarw/agent-device-demo/blob/qa-evidence-pr-2/pr-2/step-01-initial.png),
+[five taps](https://github.com/pkarw/agent-device-demo/blob/qa-evidence-pr-2/pr-2/step-02-five.png),
+[reset](https://github.com/pkarw/agent-device-demo/blob/qa-evidence-pr-2/pr-2/step-03-reset.png),
+and [count again](https://github.com/pkarw/agent-device-demo/blob/qa-evidence-pr-2/pr-2/step-04-again.png).
+Open these links while signed into GitHub with repository access.
+
 ## 🧪 Validate
 
 ```bash
