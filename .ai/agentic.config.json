@@ -2,11 +2,15 @@
   "version": 1,
   "baseBranch": "auto",
   "tracker": "github",
-  "browser": { "provider": "agent-device" },
+  "browser": { "provider": "agent-device-react-native" },
   "validation": {
     "commands": [
       "npm run lint",
       "bash .ai/scripts/flutter-check.sh",
+      "npm --prefix examples/react_native_counter run typecheck",
+      "npm --prefix examples/react_native_counter test",
+      "node --test .ai/scripts/react-native-device.test.mjs",
+      "CI=1 npm --prefix examples/react_native_counter run bundle:android",
       "npm run build"
     ]
   },

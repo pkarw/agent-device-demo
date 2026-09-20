@@ -4,6 +4,13 @@ An Android automation demo built and run on **[OpenMercatoCloud.com](https://Ope
 
 The demo launches Flutter's counter app in an Android emulator, presses the **Increment** button, verifies the counter values, and saves screenshots and accessibility snapshots for review. ✅
 
+## ⚛️ React Native Android demo
+
+There is also a [React Native counter demo](examples/react_native_counter/README.md)
+hosted natively in Expo Go, with Increment, Reset and repeatable screenshot QA.
+Run `npm run android:react-native:screenshots` after installing its dependencies.
+Both demos use **agent-device on the Android emulator**, not browser automation.
+
 ## 📸 Screenshots from the verified run
 
 These screenshots were captured from the running Android app with agent-device. Each image is **540 × 960**, and its counter value was checked against the app's accessibility tree.

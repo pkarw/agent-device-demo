@@ -20,6 +20,8 @@
 /.ai/qa/test-env.env
 /.ai/qa/test-env.lock/
 /examples/flutter_counter/android/.kotlin/
+/.ai/qa/react-native.lock/
+/.ai/qa/react-native-metro.log
 
 # next.js
 /.next/
