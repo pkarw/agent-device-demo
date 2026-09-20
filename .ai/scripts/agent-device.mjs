@@ -122,8 +122,15 @@ try {
     }
     let opened = false;
     try {
-      device("open", app, ...(reused ? [] : ["--relaunch"]), "--foreground", "--timeout", "300000");
+      const initial = device("open", app, ...(reused ? [] : ["--relaunch"]), "--foreground", "--timeout", "300000");
       opened = true;
+      if (initial.includes('[button] "Close app"') && initial.includes('[button] "Wait"')) {
+        const alert = JSON.parse(device("alert", "get", "--json"));
+        if (alert.data?.alert?.title !== "System UI isn't responding") {
+          throw new Error(`Android alert blocks the app: ${alert.data?.alert?.title}`);
+        }
+        device("alert", "dismiss");
+      }
       health();
     } catch (error) {
       if (opened) device("close");

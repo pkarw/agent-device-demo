@@ -26,7 +26,9 @@ function fixture(t) {
 import { appendFileSync, writeFileSync } from 'node:fs';
 const args = process.argv.slice(2);
 appendFileSync('calls.jsonl', JSON.stringify(args) + '\\n');
-if (args[0] === 'screenshot') writeFileSync(args[1], Buffer.from([137,80,78,71,13,10,26,10]));
+if (args[0] === 'open' && process.env.FAKE_ALERT) console.log('[button] "Close app"\\n[button] "Wait"');
+else if (args[0] === 'alert' && args[1] === 'get') console.log(JSON.stringify({data:{alert:{title:process.env.FAKE_ALERT}}}));
+else if (args[0] === 'screenshot') writeFileSync(args[1], Buffer.from([137,80,78,71,13,10,26,10]));
 else if (args[0] === '--version') console.log('0.21.6');
 else console.log(JSON.stringify({ success: true }));
 `, 0o755);
@@ -89,4 +91,19 @@ test("an existing lock is preserved, never silently removed", (t) => {
   f.put(".ai/qa/test-env.lock/owner.json", JSON.stringify({ pid: process.pid }));
   assert.match(f.run("close").stderr, /Another environment operation holds/);
   assert.equal(existsSync(path.join(f.root, ".ai/qa/test-env.lock/owner.json")), true);
+});
+
+test("only the known emulator System UI ANR is recovered", (t) => {
+  const f = fixture(t);
+  const result = f.run("ensure-installed", [], { FAKE_ALERT: "System UI isn't responding" });
+  assert.equal(result.status, 0, result.stderr);
+  assert.equal(f.calls().filter(([command, action]) => command === "alert" && action === "dismiss").length, 1);
+});
+
+test("an app ANR fails without dismissing the evidence", (t) => {
+  const f = fixture(t);
+  const result = f.run("ensure-installed", [], { FAKE_ALERT: "Flutter counter isn't responding" });
+  assert.equal(result.status, 1);
+  assert.match(result.stderr, /Android alert blocks the app/);
+  assert.equal(f.calls().some(([command, action]) => command === "alert" && action === "dismiss"), false);
 });
