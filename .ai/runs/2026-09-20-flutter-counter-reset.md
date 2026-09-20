@@ -35,6 +35,8 @@ the PR author to approve their own PR; independent approval remains required.
 
 ## Progress
 
+PR: #1
+
 > Convention: `- [ ]` pending, `- [x]` done. Append ` — <commit sha>` when a step lands. Do not rename step titles.
 
 ### Phase 1: Implementation
@@ -44,4 +46,9 @@ the PR author to approve their own PR; independent approval remains required.
 
 ### Phase 2: Verification
 
-- [ ] 2.1 Run the configured gate, build Android, and review the PR.
+- [x] 2.1 Run the configured gate, build Android, and review the PR. — 925f6df
+
+Validation passed: ESLint, five provider tests, Flutter analysis, three widget
+tests, Next production build, and Android x86_64 release build (16.9 MB).
+Review found no blocking code issues; GitHub refused author self-approval.
+Evidence-only om-auto-qa-pr follows on this exact source. Labels remain disabled.
