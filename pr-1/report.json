@@ -1,0 +1,61 @@
+{
+  "runId": "pr-1-20260920",
+  "mode": "pr",
+  "target": {
+    "prNumber": 1,
+    "title": "Flutter counter reset",
+    "branch": "feat/flutter-counter-reset",
+    "headSha": "5c6c159"
+  },
+  "verdict": "PASS",
+  "environment": {
+    "baseUrl": "android://dev.example.flutter_counter",
+    "role": "demo (no login)",
+    "startedByThisRepo": false,
+    "browserProvider": "agent-device"
+  },
+  "scenario": [
+    {
+      "step": 1,
+      "priority": "P1",
+      "action": "Open reviewed Flutter app",
+      "expected": "Count 0; Reset disabled",
+      "observed": "Accessibility count 0, Reset enabled=false; PNG 540x960",
+      "result": "PASS",
+      "screenshot": "step-01-initial-zero.png"
+    },
+    {
+      "step": 2,
+      "priority": "P1",
+      "action": "Press Increment five times, checking each transition",
+      "expected": "Count 5; Reset enabled",
+      "observed": "Accessibility count 5, Reset enabled=true; PNG 540x960",
+      "result": "PASS",
+      "screenshot": "step-02-five-increments.png"
+    },
+    {
+      "step": 3,
+      "priority": "P1",
+      "action": "Press Reset counter",
+      "expected": "Count 0; Reset disabled",
+      "observed": "Accessibility count 0, Reset enabled=false; PNG 540x960",
+      "result": "PASS",
+      "screenshot": "step-03-reset-zero.png"
+    },
+    {
+      "step": 4,
+      "priority": "P1",
+      "action": "Press Increment after reset",
+      "expected": "Count 1; Reset enabled",
+      "observed": "Accessibility count 1, Reset enabled=true; PNG 540x960",
+      "result": "PASS",
+      "screenshot": "step-04-increment-after-reset.png"
+    }
+  ],
+  "hasUiTest": false,
+  "notes": [
+    "Android 11 x86_64 software emulator; release APK SHA256 fc149d585a03e736caa3962106db7202f67188e9bfbef9ccc7c8863c25c85026",
+    "Known System UI startup overlay recovered by provider; app ANRs fail. Cold and warm bootstrap passed; warm reused.",
+    "Evidence only; independent approval pending. Physical devices, rotation, other Android versions and iOS not exercised."
+  ]
+}
